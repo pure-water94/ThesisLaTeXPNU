@@ -35,7 +35,7 @@ def main():
     engine=str(Path(args.tectonic).resolve()) if Path(args.tectonic).exists() else args.tectonic
     if args.test and args.final:ap.error('--test and --final cannot be combined')
     if args.test:
-        cases=[('example.tex',None),('main.tex',None),('tests/two-page-abstracts.tex',None),('tests/missing-metadata.tex','Missing final metadata'),('tests/abstract-too-long.tex','exceeds two pages'),('tests/title-overflow.tex','Cover title overlaps author area')]
+        cases=[('example.tex',None),('main.tex',None),('tests/two-page-abstracts.tex',None),('tests/missing-metadata.tex','Missing final metadata'),('tests/abstract-too-long.tex','exceeds two pages'),('tests/title-overflow.tex','Cover title overlaps author area'),('tests/missing-department.tex','Missing final metadata: department-ko')]
         reports=[run(engine,*case) for case in cases]
         (ROOT/'build/test-results.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2))
         return 0 if all(x['passed'] for x in reports) else 1

@@ -1,4 +1,4 @@
-# 나노메카트로닉스공학과 국문 박사 프로필
+# 부산대학교 학과 공통 국문 박사 프로필
 
 ## 빠른 시작
 
@@ -18,7 +18,7 @@ python verify_pdf.py
 
 `metadata.example.tex`를 **local-metadata.tex**로 복사해 확정된 값만 채웁니다. 다음 개인 파일은 Git에서 제외됩니다.
 
-- `local-metadata.tex`: 제목·성명·학위종별·지도교수·학위수여일·실제 최종심사일·위원.
+- `local-metadata.tex`: **학과(국·영문)**·제목·성명·학위종별·지도교수·학위수여일·실제 최종심사일·위원. 작성 정보는 이 파일 한 곳에서 수정합니다.
 - `local-abstract-ko.tex`, `local-abstract-en.tex`: 실제 초록. 각각 2쪽 이내.
 - `local-body.tex`: 실제 본문. `\chapter`, `\section`, `\subsection` 사용.
 - `local-references.bib`: 실제로 인용한 문헌의 검증된 서지정보.
@@ -29,7 +29,7 @@ python verify_pdf.py
 python build.py --tectonic /path/to/tectonic --input main.tex
 ```
 
-국문 학과명은 **나노메카트로닉스공학과**, 영문은 **Department of Nanomechatronics Engineering**으로 기본 설정합니다. 학과명으로 학위종별을 추정하지 않으며, 날짜를 현재 날짜로 자동 입력하지 않습니다. 긴 제목은 의미 단위에 맞춰 `\\`로 줄을 나누고 다시 검수할 수 있습니다.
+공개 클래스 `pnuthesis2026.cls`와 `metadata.example.tex`의 **국·영문 학과명 기본값은 공란**입니다. `local-metadata.tex`의 `department-ko`, `department-en`에 실제 학과와 공식 영문 명칭을 입력하면 표지·인준지·두 초록에 함께 반영됩니다. 학과명으로 학위종별을 추정하지 않으며, 날짜를 현재 날짜로 자동 입력하지 않습니다. 긴 제목은 의미 단위에 맞춰 `\\`로 줄을 나누고 다시 검수할 수 있습니다.
 
 ### 제출 모드
 

@@ -1,16 +1,16 @@
 % Korean doctoral starter. Actual manuscript and metadata remain local.
 \ifdefined\PNUFinal
- \documentclass[final]{pnunanomech}
+ \documentclass[final]{pnuthesis2026}
 \else
- \documentclass[draft]{pnunanomech}
+ \documentclass[draft]{pnuthesis2026}
 \fi
 \InputIfFileExists{local-metadata.tex}{}{\input{metadata.example.tex}}
 \begin{document}
 \ifpnufinal
- \IfFileExists{local-body.tex}{}{\ClassError{pnunanomech}{Missing local-body.tex}{Do not submit the starter placeholders.}}
- \IfFileExists{local-abstract-ko.tex}{}{\ClassError{pnunanomech}{Missing Korean abstract}{Provide the actual abstract.}}
- \IfFileExists{local-abstract-en.tex}{}{\ClassError{pnunanomech}{Missing foreign-language abstract}{Provide the actual abstract.}}
- \IfFileExists{local-references.bib}{}{\ClassError{pnunanomech}{Missing verified bibliography}{Do not submit the demonstration references.}}
+ \IfFileExists{local-body.tex}{}{\ClassError{pnuthesis2026}{Missing local-body.tex}{Do not submit the starter placeholders.}}
+ \IfFileExists{local-abstract-ko.tex}{}{\ClassError{pnuthesis2026}{Missing Korean abstract}{Provide the actual abstract.}}
+ \IfFileExists{local-abstract-en.tex}{}{\ClassError{pnuthesis2026}{Missing foreign-language abstract}{Provide the actual abstract.}}
+ \IfFileExists{local-references.bib}{}{\ClassError{pnuthesis2026}{Missing verified bibliography}{Do not submit the demonstration references.}}
 \fi
 \PNUMakeCover
 \PNUMakeBlank

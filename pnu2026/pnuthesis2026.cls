@@ -1,13 +1,13 @@
-% PNU 2026 Korean doctoral thesis profile for Nanomechatronics Engineering.
+% PNU 2026 Korean doctoral thesis profile; department data belongs in metadata.
 % Structural successor in this fork to Isaac-Kwon/ThesisLaTeXPNU (upstream
 % 29b215cfde83c7907674dc9d56d8945ae23fe929). Upstream files are preserved.
 % Not an official university class. See README and docs/compliance.md.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{pnunanomech}[2026/10/04 v0.1 PNU Korean doctoral profile]
+\ProvidesClass{pnuthesis2026}[2026/10/04 v0.2 PNU department-neutral Korean doctoral profile]
 \newif\ifpnufinal \pnufinalfalse
 \DeclareOption{draft}{\pnufinalfalse}
 \DeclareOption{final}{\pnufinaltrue}
-\DeclareOption*{\ClassError{pnunanomech}{Unsupported option \CurrentOption}{Only draft and final are supported.}}
+\DeclareOption*{\ClassError{pnuthesis2026}{Unsupported option \CurrentOption}{Only draft and final are supported.}}
 \ProcessOptions\relax
 \RequirePackage{fix-cm}
 \LoadClass[11pt,a4paper,oneside,onecolumn]{report}
@@ -76,8 +76,8 @@
 \def\pnuTitleKo{} \def\pnuTitleEn{} \def\pnuAuthorKo{} \def\pnuAuthorEn{}
 \def\pnuDegreeKo{} \def\pnuGraduation{} \def\pnuExamination{} \def\pnuAdviser{}
 \def\pnuChair{} \def\pnuMemberA{} \def\pnuMemberB{} \def\pnuMemberC{} \def\pnuMemberD{}
-\def\pnuDepartmentKo{나노메카트로닉스공학과}
-\def\pnuDepartmentEn{Department of Nanomechatronics Engineering}
+\def\pnuDepartmentKo{}
+\def\pnuDepartmentEn{}
 \def\pnuDraftLabel{검토용 초안 — 제출본 아님}
 \pgfkeys{/pnu/.is family,/pnu,
  title-ko/.store in=\pnuTitleKo,title-en/.store in=\pnuTitleEn,
@@ -90,18 +90,19 @@
  draft-label/.store in=\pnuDraftLabel,approved/.is if=pnuapproved}
 \newcommand{\PNUsetup}[1]{\pgfkeys{/pnu,#1}}
 \newcommand{\PNUvalue}[2]{\ifx#1\@empty #2\else #1\fi}
-\newcommand{\PNUrequire}[2]{\ifx#1\@empty\ClassError{pnunanomech}{Missing final metadata: #2}{Supply confirmed metadata; do not invent it.}\fi}
+\newcommand{\PNUrequire}[2]{\ifx#1\@empty\ClassError{pnuthesis2026}{Missing final metadata: #2}{Supply confirmed metadata; do not invent it.}\fi}
 \AtBeginDocument{%
  \ifpnufinal
-  \ifpnuapproved\else\ClassError{pnunanomech}{Final approval flag is false}{Use draft until all metadata and PDF layout are reviewed.}\fi
+  \ifpnuapproved\else\ClassError{pnuthesis2026}{Final approval flag is false}{Use draft until all metadata and PDF layout are reviewed.}\fi
   \PNUrequire{\pnuTitleKo}{title-ko}\PNUrequire{\pnuTitleEn}{title-en}
   \PNUrequire{\pnuAuthorKo}{author-ko}\PNUrequire{\pnuAuthorEn}{author-en}
+  \PNUrequire{\pnuDepartmentKo}{department-ko}\PNUrequire{\pnuDepartmentEn}{department-en}
   \PNUrequire{\pnuDegreeKo}{degree-ko}\PNUrequire{\pnuGraduation}{graduation}
   \PNUrequire{\pnuExamination}{examination}\PNUrequire{\pnuAdviser}{adviser}
   \PNUrequire{\pnuChair}{chair}\PNUrequire{\pnuMemberA}{member-a}
   \PNUrequire{\pnuMemberB}{member-b}\PNUrequire{\pnuMemberC}{member-c}\PNUrequire{\pnuMemberD}{member-d}
  \fi
- \hypersetup{pdftitle={PNU Nanomechatronics Thesis},pdfauthor={}}
+ \hypersetup{pdftitle={PNU Thesis},pdfauthor={}}
 }
 \AddToHook{shipout/background}{\ifpnufinal\else\ifpnublank\else
  \begin{tikzpicture}[remember picture,overlay]
@@ -116,10 +117,10 @@
  \node[pnutext,anchor=north,font=\PNUfont{16}] (degree) at ([yshift=-45mm]current page.north){박사학위논문};
  \node[pnutext,below=20mm of degree,font=\PNUfont{22}] (title){\PNUvalue{\pnuTitleKo}{논문 제목 입력}};
  \node[pnutext,anchor=south,font=\PNUfont{16}] (date) at ([yshift=40mm]current page.south){\PNUvalue{\pnuGraduation}{년\quad 월}};
- \node[pnutext,above=20mm of date,font=\PNUfont{16}] (dept){\pnuDepartmentKo};
+ \node[pnutext,above=20mm of date,font=\PNUfont{16}] (dept){\PNUvalue{\pnuDepartmentKo}{학과 입력}};
  \node[pnutext,above=5mm of dept,font=\PNUfont{16}] (school){부산대학교 대학원};
  \node[pnutext,above=20mm of school,font=\PNUfont{16}] (author){\PNUvalue{\pnuAuthorKo}{성명 입력}};
- \path let \p1=(title.south),\p2=(author.north) in \pgfextra{\pgfmathsetlengthmacro{\pnugap}{\y1-\y2}\typeout{PNU-COVER-GAP=\pnugap}\ifdim\pnugap<5mm\ClassError{pnunanomech}{Cover title overlaps author area}{Shorten or explicitly reflow the title.}\fi};
+ \path let \p1=(title.south),\p2=(author.north) in \pgfextra{\pgfmathsetlengthmacro{\pnugap}{\y1-\y2}\typeout{PNU-COVER-GAP=\pnugap}\ifdim\pnugap<5mm\ClassError{pnuthesis2026}{Cover title overlaps author area}{Shorten or explicitly reflow the title.}\fi};
  \end{tikzpicture}\clearpage}
 \newcommand{\PNUMakeBlank}{\global\pnublanktrue\thispagestyle{empty}\null\clearpage\global\pnublankfalse}
 \newcommand{\PNUCommitteeRow}[2]{\makebox[22mm][l]{#1}\makebox[78mm][l]{\PNUvalue{#2}{\underline{\hspace{50mm}}}}\makebox[10mm][r]{인}}
@@ -130,7 +131,7 @@
  \node[pnutext,below=15mm of title,font=\PNUfont{16}] (submit){이 논문을 \PNUvalue{\pnuDegreeKo}{○○}박사 학위논문으로 제출함};
  \node[pnutext,below=10mm of submit,font=\PNUfont{14}] (author){\PNUvalue{\pnuAuthorKo}{성명 입력}};
  \node[pnutext,below=10mm of author,font=\PNUfont{14}] (school){부산대학교 대학원};
- \node[pnutext,below=5mm of school,font=\PNUfont{14}] (dept){\pnuDepartmentKo};
+ \node[pnutext,below=5mm of school,font=\PNUfont{14}] (dept){\PNUvalue{\pnuDepartmentKo}{학과 입력}};
  \node[pnutext,below=10mm of dept,font=\PNUfont{14}] (adviser){지도교수\quad\PNUvalue{\pnuAdviser}{○ ○ ○}};
  \node[pnutext,anchor=south,font=\PNUfont{14}] (m4) at ([yshift=40mm]current page.south){\PNUCommitteeRow{위원}{\pnuMemberD}};
  \node[pnutext,above=5mm of m4,font=\PNUfont{14}] (m3){\PNUCommitteeRow{위원}{\pnuMemberC}};
@@ -139,7 +140,7 @@
  \node[pnutext,above=5mm of m1,font=\PNUfont{14}] (chair){\PNUCommitteeRow{위원장}{\pnuChair}};
  \node[pnutext,above=10mm of chair,font=\PNUfont{14}] (date){\PNUvalue{\pnuExamination}{년\quad 월\quad 일}};
  \node[pnutext,above=10mm of date,font=\PNUfont{16}] (approve){\PNUvalue{\pnuAuthorKo}{성명 입력}의 \PNUvalue{\pnuDegreeKo}{○○}박사 학위논문을 인준함};
- \path let \p1=(adviser.south),\p2=(approve.north) in \pgfextra{\pgfmathsetlengthmacro{\pnugap}{\y1-\y2}\typeout{PNU-APPROVAL-GAP=\pnugap}\ifdim\pnugap<5mm\ClassError{pnunanomech}{Approval title or metadata exceeds available space}{Reflow the title; do not overlap the approval block.}\fi};
+ \path let \p1=(adviser.south),\p2=(approve.north) in \pgfextra{\pgfmathsetlengthmacro{\pnugap}{\y1-\y2}\typeout{PNU-APPROVAL-GAP=\pnugap}\ifdim\pnugap<5mm\ClassError{pnuthesis2026}{Approval title or metadata exceeds available space}{Reflow the title; do not overlap the approval block.}\fi};
  \end{tikzpicture}\clearpage}
 \newcommand{\PNUMakeLists}{%
  \pagenumbering{Roman}\pagestyle{plain}
@@ -157,12 +158,12 @@
  \ifx\pnuWhich\pnuKo
   \node[pnutext,anchor=north,font=\PNUfont{14}] (title) at (0,0){\PNUvalue{\pnuTitleKo}{논문 제목 입력}};
   \node[pnutext,below=15mm of title,font=\PNUfont{12}] (author){\PNUvalue{\pnuAuthorKo}{성명 입력}};
-  \node[pnutext,below=10mm of author,font=\PNUfont{11}] (dept){부산대학교 대학원 \pnuDepartmentKo};
+  \node[pnutext,below=10mm of author,font=\PNUfont{11}] (dept){부산대학교 대학원 \PNUvalue{\pnuDepartmentKo}{학과 입력}};
   \node[pnutext,below=15mm of dept,font=\PNUfont{12}] (label){요약};
  \else
   \node[pnutext,anchor=north,font=\PNUfont{14}] (title) at (0,0){\PNUvalue{\pnuTitleEn}{Thesis Title}};
   \node[pnutext,below=15mm of title,font=\PNUfont{12}] (author){\PNUvalue{\pnuAuthorEn}{Name}};
-  \node[pnutext,below=10mm of author,font=\PNUfont{11}] (dept){\pnuDepartmentEn\\The Graduate School\\Pusan National University};
+  \node[pnutext,below=10mm of author,font=\PNUfont{11}] (dept){\PNUvalue{\pnuDepartmentEn}{Department of ...}\\The Graduate School\\Pusan National University};
   \node[pnutext,below=15mm of dept,font=\PNUfont{12}] (label){Abstract};
  \fi
  \end{tikzpicture}\par\vspace{10mm}\nointerlineskip
@@ -170,7 +171,7 @@
  #2\par
  \typeout{PNU-ABSTRACT-#1-PAGES=\the\numexpr\value{page}-\pnuabsstart+1\relax}
  \ifnum\numexpr\value{page}-\pnuabsstart+1\relax>2
-  \ClassError{pnunanomech}{Abstract #1 exceeds two pages}{Shorten the abstract; do not shrink required font sizes.}
+  \ClassError{pnuthesis2026}{Abstract #1 exceeds two pages}{Shorten the abstract; do not shrink required font sizes.}
  \fi\endgroup\clearpage}
 \newcommand{\PNUStartBody}{\clearpage\pagenumbering{arabic}\pagestyle{plain}\setstretch{1.35}\PNUfont{11}}
 \renewcommand{\bibsection}{\chapter*{참고문헌}\phantomsection\addcontentsline{toc}{chapter}{참고문헌}}

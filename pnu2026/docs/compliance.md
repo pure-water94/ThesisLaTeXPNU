@@ -8,7 +8,7 @@
 
 기준 PDF SHA-256: `8792e6b08145db2ec5d51c5968630eb30d9a9534823731023ee90e0e0f32ce84` (10쪽). 물리 p.4 공통사항, p.5 국문 서식 도식, p.8 체크리스트를 대조했다. 공식 PDF 자체를 이 저장소에 재배포하지 않는다.
 
-학과 영문명 근거: [부산대 나노과학기술대학 대학원 소개](https://nano.pusan.ac.kr/nanoeng/60060/subview.do)의 `Graduate school : Department of Nanomechatronics Engineering`. **학위종별·개인 학적 정보까지 확인한 것은 아니다.**
+학과는 공개 코드에서 고정하지 않는다. 각 사용자가 소속 학과의 공식 안내에서 확인한 국·영문 명칭을 `local-metadata.tex`에 입력한다. **학과명으로 학위종별·개인 학적 정보를 추론하지 않는다.**
 
 ## 필수 항목 → 구현·검증
 

@@ -34,5 +34,11 @@
     "exit_code": 1,
     "expected_error": "Cover title overlaps author area",
     "passed": true
+  },
+  {
+    "source": "tests/missing-department.tex",
+    "exit_code": 1,
+    "expected_error": "Missing final metadata: department-ko",
+    "passed": true
   }
 ]

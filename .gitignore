@@ -13,10 +13,10 @@ my*
 /figure
 
 # New profile: never publish actual manuscript/metadata or local builds.
-/nanomechatronics/build/
-/nanomechatronics/local-*
-/nanomechatronics/release-main.tex
-/nanomechatronics/_test_*.tex
+/pnu2026/build/
+/pnu2026/local-*
+/pnu2026/release-main.tex
+/pnu2026/_test_*.tex
 __pycache__/
 *.bbl
 *.blg
