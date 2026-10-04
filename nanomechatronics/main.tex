@@ -1,0 +1,27 @@
+% Korean doctoral starter. Actual manuscript and metadata remain local.
+\ifdefined\PNUFinal
+ \documentclass[final]{pnunanomech}
+\else
+ \documentclass[draft]{pnunanomech}
+\fi
+\InputIfFileExists{local-metadata.tex}{}{\input{metadata.example.tex}}
+\begin{document}
+\ifpnufinal
+ \IfFileExists{local-body.tex}{}{\ClassError{pnunanomech}{Missing local-body.tex}{Do not submit the starter placeholders.}}
+ \IfFileExists{local-abstract-ko.tex}{}{\ClassError{pnunanomech}{Missing Korean abstract}{Provide the actual abstract.}}
+ \IfFileExists{local-abstract-en.tex}{}{\ClassError{pnunanomech}{Missing foreign-language abstract}{Provide the actual abstract.}}
+ \IfFileExists{local-references.bib}{}{\ClassError{pnunanomech}{Missing verified bibliography}{Do not submit the demonstration references.}}
+\fi
+\PNUMakeCover
+\PNUMakeBlank
+\PNUMakeApproval
+\PNUMakeLists
+\PNUAbstract{ko}{\InputIfFileExists{local-abstract-ko.tex}{}{국문초록을 입력한다. 본문과 동일한 언어로 작성하고 두 쪽을 넘지 않는다.}}
+\PNUStartBody
+\InputIfFileExists{local-body.tex}{}{\chapter{서론}본문을 입력한다. 이것은 내용 미작성 초안이며 제출본이 아니다.}
+% No uncited entries are printed. Replace references.bib with your verified public
+% metadata or use local-references.bib (gitignored).
+\IfFileExists{local-references.bib}{\PNUBibliography{local-references}}{\chapter*{참고문헌}\phantomsection\addcontentsline{toc}{chapter}{참고문헌}실제로 인용한 문헌의 검증된 서지정보를 local-references.bib에 입력한다.}
+\IfFileExists{local-appendix.tex}{\PNUAppendix\input{local-appendix.tex}}{}
+\PNUAbstract{en}{\InputIfFileExists{local-abstract-en.tex}{}{Enter the foreign-language abstract. This is an incomplete draft, not a submission document.}}
+\end{document}

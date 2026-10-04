@@ -1,0 +1,38 @@
+[
+  {
+    "source": "example.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "main.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "tests/two-page-abstracts.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "tests/missing-metadata.tex",
+    "exit_code": 1,
+    "expected_error": "Missing final metadata",
+    "passed": true
+  },
+  {
+    "source": "tests/abstract-too-long.tex",
+    "exit_code": 1,
+    "expected_error": "exceeds two pages",
+    "passed": true
+  },
+  {
+    "source": "tests/title-overflow.tex",
+    "exit_code": 1,
+    "expected_error": "Cover title overlaps author area",
+    "passed": true
+  }
+]

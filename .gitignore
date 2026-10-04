@@ -11,3 +11,15 @@
 # personal data
 my*
 /figure
+
+# New profile: never publish actual manuscript/metadata or local builds.
+/nanomechatronics/build/
+/nanomechatronics/local-*
+/nanomechatronics/release-main.tex
+/nanomechatronics/_test_*.tex
+__pycache__/
+*.bbl
+*.blg
+*.lot
+*.xdv
+*.synctex(busy)
