@@ -1,0 +1,6 @@
+% Private production entry point. No guessed metadata or binding width.
+\documentclass{pnuspine}
+\IfFileExists{local-spine.tex}{\input{local-spine.tex}}{%
+ \ClassError{pnuspine}{Missing local-spine.tex}{Copy spine-metadata.example.tex and confirm binding dimensions.}}
+\PNUspineGeometry
+\begin{document}\PNUMakeSpine\end{document}

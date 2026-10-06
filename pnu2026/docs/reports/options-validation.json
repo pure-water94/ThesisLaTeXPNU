@@ -1,0 +1,246 @@
+{
+  "scope": "Synthetic fixtures only; width/font are test values, not PNU rules",
+  "tests": {
+    "spine_single_page": true,
+    "spine_test_width_20mm_not_a_rule": true,
+    "spine_height_297mm": true,
+    "spine_right_column_first": true,
+    "spine_left_column_second": true,
+    "spine_name_then_award_year_month": true,
+    "spine_upright_glyphs": true,
+    "spine_black_text": true,
+    "spine_fixture_font_12bp": true,
+    "spine_top_20mm_with_font_metric_tolerance": true,
+    "spine_bottom_20mm_with_font_metric_tolerance": true,
+    "spine_title_name_10mm_with_font_metric_tolerance": true,
+    "spine_name_date_10mm_with_font_metric_tolerance": true,
+    "spine_exact_box_height_budget": true,
+    "body_seven_pages": true,
+    "body_first_section_with_chapter": true,
+    "body_second_section_new_page": true,
+    "chapter_two_first_section_with_heading": true,
+    "chapter_bib_one_local_entry": true,
+    "chapter_bib_two_local_entries": true,
+    "chapter_citation_numbering": true,
+    "figure_and_table_references": true,
+    "english_footnote_present": true,
+    "english_footnote_embedded_roman_and_italic": true,
+    "body_contiguous_page_numbers": true,
+    "large_object_horizontal_center": true,
+    "large_object_vertical_center_in_text_area": true,
+    "large_object_not_scaled": true,
+    "default_options_preserve_same_page_sections": true,
+    "heading_reservation_moves_heading_and_paragraph": true,
+    "spine-example_anonymous_metadata": true,
+    "body-options-example_anonymous_metadata": true,
+    "_test_body-defaults_anonymous_metadata": true,
+    "_test_heading-keep_anonymous_metadata": true,
+    "all_fonts_embedded": true,
+    "no_outside_text": true,
+    "no_unresolved_or_font_or_overflow_warnings": true
+  },
+  "passed": true,
+  "measurements": {
+    "ink_top_mm": 20.46829467349582,
+    "ink_bottom_mm": 20.72894575330946,
+    "ink_title_author_gap_mm": 9.619309488932291,
+    "ink_author_date_gap_mm": 11.342503187391491
+  },
+  "spine_box_dimensions_bp": {
+    "WIDTH": 56.69290161892902,
+    "TITLE-HEIGHT": 531.4109589041095,
+    "AUTHOR-HEIGHT": 46.8000199252802,
+    "DATE-HEIGHT": 93.6000498132005
+  },
+  "pages": {
+    "spine-example": 1,
+    "body-options-example": 7,
+    "_test_body-defaults": 1,
+    "_test_heading-keep": 2
+  },
+  "sha256": {
+    "spine-example": "a2d923ef13ebc0100b297f50b23176918482092ffa6c3d85609833b09d349797",
+    "body-options-example": "857098e840c96c308735a11de7be23bd7403640c67073e883c066050998d8481",
+    "_test_body-defaults": "43f8dc214aaa271eb15b406172d2772008091167c29be38d2b2bf1254060f2a3",
+    "_test_heading-keep": "4069890e59c28fe4a6ac69e490f52a4277a90d585e1dbf872f51aef1dd2d6861"
+  },
+  "fonts": [
+    {
+      "document": "spine-example",
+      "font": "IHAIZV+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "spine-example",
+      "font": "BZIVMZ+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IHAIZV+UnDotum-Bold",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "BZIVMZ+LMSans10-Bold-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "TQTHRL+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "YEUUOC+TeXGyreTermes-Italic-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "BZIVMZ+LMSans10-Bold-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IHAIZV+UnDotum-Bold",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "TQTHRL+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "BZIVMZ+LMSans10-Bold-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IHAIZV+UnDotum-Bold",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "TQTHRL+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IHAIZV+UnDotum-Bold",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "TQTHRL+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "YEUUOC+TeXGyreTermes-Italic-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IHAIZV+UnDotum-Bold",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "BZIVMZ+LMSans10-Bold-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "TQTHRL+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IHAIZV+UnDotum-Bold",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "TQTHRL+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "body-options-example",
+      "font": "YEUUOC+TeXGyreTermes-Italic-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "_test_body-defaults",
+      "font": "IHAIZV+UnDotum-Bold",
+      "embedded": true
+    },
+    {
+      "document": "_test_body-defaults",
+      "font": "BZIVMZ+LMSans10-Bold-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "_test_body-defaults",
+      "font": "IXFAWU+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "_test_body-defaults",
+      "font": "TQTHRL+UnBatang",
+      "embedded": true
+    },
+    {
+      "document": "_test_heading-keep",
+      "font": "IHAIZV+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "_test_heading-keep",
+      "font": "BZIVMZ+LMSans10-Bold-Identity-H",
+      "embedded": true
+    },
+    {
+      "document": "_test_heading-keep",
+      "font": "IHAIZV+TeXGyreTermes-Regular-Identity-H",
+      "embedded": true
+    }
+  ],
+  "outside_text": [],
+  "warnings": []
+}

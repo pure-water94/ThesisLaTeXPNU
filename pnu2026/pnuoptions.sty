@@ -1,0 +1,51 @@
+% Optional editorial choices, not university requirements.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pnuoptions}[2026/10/06 v0.1 Optional thesis body helpers]
+\newif\ifpnusectionpages
+\newif\ifpnucenterobjects
+\newif\ifpnuchapterrefs
+\DeclareOption{section-newpage}{\pnusectionpagestrue}
+\DeclareOption{center-large-objects}{\pnucenterobjectstrue}
+\DeclareOption{chapter-references}{\pnuchapterrefstrue}
+\DeclareOption*{\PackageError{pnuoptions}{Unknown option \CurrentOption}{See docs/body-options.md.}}
+\ProcessOptions\relax
+\RequirePackage{needspace}
+\RequirePackage{environ}
+\ifpnuchapterrefs
+ \RequirePackage[sectionbib]{chapterbib}
+ \renewcommand{\bibsection}{\section*{참고문헌}\phantomsection\addcontentsline{toc}{section}{참고문헌}}
+\fi
+% First section stays with its chapter heading; later sections start a page.
+\ifpnusectionpages
+ \let\pnuoriginalsection\section
+ \RenewDocumentCommand{\section}{s o m}{%
+  \ifnum\value{section}>0\relax\clearpage\fi
+  \IfBooleanTF{#1}{\pnuoriginalsection*{#3}}{%
+   \IfNoValueTF{#2}{\pnuoriginalsection{#3}}{\pnuoriginalsection[#2]{#3}}}}
+\fi
+% Explicit reservation before a heading: no global penalty or title rewriting.
+\newcommand{\PNUKeepHeading}[1][5\baselineskip]{\Needspace{#1}}
+\newcommand{\PNUEnglishFootnote}[1]{\footnote{\begingroup\normalfont\rmfamily #1\endgroup}}
+\newcommand{\PNUChapterBibliography}[1]{%
+ \ifpnuchapterrefs
+  \bibliographystyle{unsrtnat}\bibliography{#1}%
+ \else
+  \PackageError{pnuoptions}{Enable chapter-references first}{Use this command inside a chapter loaded with include.}%
+ \fi}
+\newsavebox{\pnuobjectbox}
+\NewEnviron{PNUObject}[1]{%
+ \par\begingroup\def\@captype{#1}%
+ \begin{lrbox}{\pnuobjectbox}\begin{minipage}{\textwidth}\BODY\end{minipage}\end{lrbox}%
+ \ifdim\dimexpr\ht\pnuobjectbox+\dp\pnuobjectbox\relax>\textheight
+  \PackageError{pnuoptions}{Object exceeds text height}{Split the object; this helper never scales or splits content.}%
+ \fi
+ \ifpnucenterobjects
+  \ifdim\dimexpr\ht\pnuobjectbox+\dp\pnuobjectbox\relax>0.55\textheight
+   \clearpage\thispagestyle{plain}\nointerlineskip
+   \vbox to \textheight{\vfil\hbox to \textwidth{\hfil\usebox{\pnuobjectbox}\hfil}\vfil}\clearpage
+  \else\pnuplaceobject{#1}\fi
+ \else\pnuplaceobject{#1}\fi\endgroup}
+\newcommand{\pnuplaceobject}[1]{%
+ \ifx\@captype\@empty\noindent\usebox{\pnuobjectbox}\par\medskip
+ \else\@float{#1}[!htb]\centering\usebox{\pnuobjectbox}\end@float\fi}
+\endinput

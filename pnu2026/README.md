@@ -51,6 +51,13 @@ python build.py --tectonic /path/to/tectonic --final
 - 샘플 문헌은 공개 서지정보를 이용한 번호 시험용입니다. 실제 원고에 그대로 끼워 넣지 마세요.
 - 본문 영문 제목 표기·참고문헌 분야별 스타일은 지도교수 기준으로 확정합니다. 이 프로필의 numeric/unsrtnat는 학교 강제 양식이 아닙니다.
 
+## 선택형 본문 기능과 등표지
+
+- [선택형 본문 기능](docs/body-options.md): 장별 참고문헌, 절 새 페이지, 큰 도표 중앙 페이지, 제목 공간 예약, 영문 각주. 기본 클래스는 변경하지 않으며 필요한 기능만 `pnuoptions`로 켭니다.
+- [국문 박사 등표지](docs/spine.md): 책자용 **독립 1쪽 PDF**. 실제 제본 폭과 글자 크기를 필수 입력하며 공식 도식에 없는 수치를 규정으로 추정하지 않습니다.
+- 익명 실출력: [본문 옵션 7쪽](preview/body-options-example.pdf), [등표지 시험 1쪽](preview/spine-example.pdf). 등표지의 **20mm·12bp는 시험값**이지 규정이나 실제 책등 폭이 아닙니다.
+- 회귀검사는 개인정보 파일이 없는 깨끗한 복사본에서 `build.py --test`, `verify_pdf.py`, `verify_options.py` 순서로 실행합니다.
+
 ## 서식 선택과 제한
 
 본문 기본 글꼴은 TeX 배포의 UnBatang/UnDotum 및 TeX Gyre Termes입니다. 학교가 지정한 유일한 본문 글꼴이라고 주장하지 않습니다. 글꼴 변경 후 표지/인준/초록의 실측과 전체 페이지 재검사가 필요합니다.

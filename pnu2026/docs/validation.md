@@ -1,4 +1,17 @@
-# 실제 검증 결과 — v0.2
+# 실제 검증 결과 — 기본 프로필과 선택형 확장
+
+## 선택형 확장 최종 회귀검사
+
+개인 `local-*` 파일과 이전 빌드 산출물을 제외한 깨끗한 복사본에서 마지막 `build.py` 경로·기존 BBL 보호 패치를 포함해 전체 시험을 다시 실행했다. **확장 빌드 수용시험 17/17, 기존 PDF 회귀검사 35/35, 본문 옵션·등표지 검사 37/37이 통과**했다. 음성시험의 의도한 오류 차단도 통과에 포함한다.
+
+- [확장 빌드 결과](reports/extended-test-results.json)
+- [기존 PDF 회귀 결과](reports/baseline-regression.json)
+- [선택형 기능 PDF 검사](reports/options-validation.json)
+- [익명 본문 옵션 PDF](../preview/body-options-example.pdf), [익명 등표지 PDF](../preview/spine-example.pdf)
+
+등표지 **폭 20mm·글자 크기 12bp는 익명 시험 입력일 뿐 학교 의무 규격이나 실제 제본 확정값이 아니다.** 새 미리보기와 JSON은 같은 최종 시험 실행에서 복사했다. 기존 `example.pdf`와 아래 v0.2 기록은 이전 기준 산출물로 보존하며, 새 회귀 JSON의 해시는 이번 실행의 PDF를 가리킨다. 이번 재실행은 자동 검사이며 아래의 기존 시각검사 기록을 새 시각검사로 대체하지 않는다.
+
+## v0.2 기본 프로필 기록
 
 ## 실행 기준
 

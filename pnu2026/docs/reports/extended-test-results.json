@@ -1,0 +1,106 @@
+[
+  {
+    "source": "example.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "main.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "tests/two-page-abstracts.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "tests/missing-metadata.tex",
+    "exit_code": 1,
+    "expected_error": "Missing final metadata",
+    "passed": true
+  },
+  {
+    "source": "tests/abstract-too-long.tex",
+    "exit_code": 1,
+    "expected_error": "exceeds two pages",
+    "passed": true
+  },
+  {
+    "source": "tests/title-overflow.tex",
+    "exit_code": 1,
+    "expected_error": "Cover title overlaps author area",
+    "passed": true
+  },
+  {
+    "source": "tests/missing-department.tex",
+    "exit_code": 1,
+    "expected_error": "Missing final metadata: department-ko",
+    "passed": true
+  },
+  {
+    "source": "spine-example.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "tests/body-defaults.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "tests/heading-keep.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true
+  },
+  {
+    "source": "tests/spine-missing-width.tex",
+    "exit_code": 1,
+    "expected_error": "Missing positive spine width",
+    "passed": true
+  },
+  {
+    "source": "tests/spine-missing-font.tex",
+    "exit_code": 1,
+    "expected_error": "Missing positive spine font-size",
+    "passed": true
+  },
+  {
+    "source": "tests/spine-too-narrow.tex",
+    "exit_code": 1,
+    "expected_error": "Spine too narrow",
+    "passed": true
+  },
+  {
+    "source": "tests/spine-too-long.tex",
+    "exit_code": 1,
+    "expected_error": "Title column exceeds available height",
+    "passed": true
+  },
+  {
+    "source": "tests/object-too-tall.tex",
+    "exit_code": 1,
+    "expected_error": "Object exceeds text height",
+    "passed": true
+  },
+  {
+    "source": "spine.tex",
+    "exit_code": 1,
+    "expected_error": "Missing local-spine.tex",
+    "passed": true
+  },
+  {
+    "source": "body-options-example.tex",
+    "exit_code": 0,
+    "expected_error": null,
+    "passed": true,
+    "unresolved_references": false,
+    "chapter_bibliographies": 2
+  }
+]

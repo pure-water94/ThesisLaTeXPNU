@@ -1,0 +1,11 @@
+% Options stay off unless explicitly enabled.
+\documentclass[draft]{pnuthesis2026}
+\usepackage{pnuoptions}
+\PNUsetup{draft-label={}}
+\begin{document}\PNUStartBody
+\chapter{기본 선택 시험}\section{첫 절}DEFAULT FIRST.
+\section[Short title]{둘째 절}DEFAULT SECOND.
+\section*{별도 제목}DEFAULT STARRED.
+\begin{PNUObject}{table}\caption{Small default object}
+\centering\begin{tabular}{cc}X&Y\\2&3\end{tabular}\end{PNUObject}
+\end{document}
